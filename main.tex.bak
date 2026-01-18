@@ -1,0 +1,87 @@
+%%
+%% El presente documento fue creado por
+%% Fecha de creación: 13-mayo-2019
+%% Actualizado:       01-ago-2023
+%%
+%% Esta versión funciona con TeX-Live 2019
+
+\documentclass[letterpaper,openright,11pt]{report}
+\usepackage{standalone}
+\usepackage{import}
+
+
+%% EN EL SIGUIENTE ARCHIVO CONTIENE TODAS LAS LIBRERÍAS NECESARIAS
+%% PARA EL FORMATEO GENERAL DEL DOCUMENTO
+%%
+\input{Secciones/libreria}
+%
+\makenomenclature
+
+\title{Título de la propuesta para la generación de índices, debe ser
+    igual que el de abajo escrito}
+\author{Nombre del Estudiante}
+
+%%%%%%%%%%%% Datos personales%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\titulo}	{Implementación de un protocolo de comunicación serial en un
+circuito integrado ASIC usando herramientas open source}
+\newcommand{\alumnos}	{Héctor Eduardo Sanjuan García}
+\newcommand{\gradoanterior} {Maestro}
+\newcommand{\queparaobtenerelgradode} {Doctorado}
+\newcommand{\director}  {Dr. Rubén Salas Cabrera}
+\newcommand{\codirector} {Dr. Juan Frausto Solís}
+\newcommand{\dia}   {7}
+\newcommand{\mes} 	{noviembre}
+\newcommand{\yeaR} 	{2025}
+\newcommand{\nodecontrol} {D02070642}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%% PÁGINA QUE VA AL PRINCIPIO DE LA TESIS
+%%
+% \pagenumbering{roman}
+\begin{titlepage}
+\subimport{Secciones/}{sec0presentacion}
+\end{titlepage}
+\noindent
+
+%% SECCIONES DEL DOCUMENTO PRINCIPAL
+%%
+%%
+\subimport{Secciones/}{sec0Resumen}
+
+\subimport{Secciones/}{sec0Indices}
+
+\subimport{Secciones/}{Seccion1Introduccion}
+
+\subimport{Secciones/}{Seccion2MarcoTeorico}
+
+\subimport{Secciones/}{Seccion3Antecedentes}
+
+\subimport{Secciones/}{Seccion4Metodologia}
+
+\subimport{Secciones/}{Seccion5ResultadosEsperados}
+
+\subimport{Secciones/}{Seccion6ComentariosFinales}
+
+\subimport{Secciones/}{SecXGlosario}
+
+%\subimport{Secciones/}{SecXIIBibliografia}
+
+{\singlespacing
+
+\addcontentsline{toc}{chapter}{Bibliografía}
+\bibliographystyle{IEEEtran}
+\vspace*{-60mm}
+\bibliography{Secciones/fuentes}
+}
+
+\newpage 
+
+\subimport{Secciones/}{SecXIAnexos}
+
+
+
+\end{document}

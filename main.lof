@@ -1,0 +1,48 @@
+\babel@toc {spanish}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Programa Especial de Ciencia, Tecnolog\IeC {\'\i }a e Innovaci\'on (CTI) 2021-2024.}}{3}{figure.caption.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Nodo CAN.}}{6}{figure.caption.3}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Red CAN con actuadores y sensores.}}{7}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Red CAN Automotriz.}}{8}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Campos de bits del mensaje CAN.}}{9}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Diagrama de bloques de un ASIC CAN.}}{11}{figure.caption.8}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Simulaci\'on del dise\~no en Verilog.}}{19}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Modelo para crear prototipos.}}{19}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Generacion del archivo GDSII usando OpenLane.}}{20}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Se\~nales CAN siendo monitoreadas.}}{20}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Placa FPGA Virtex XSV-100.}}{21}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Proceso SG13G2.}}{24}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Ejecutando el archivo start\_x.bat.}}{28}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Error de Docker.}}{28}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Repositorio kvic\_336007\_ws25}}{29}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Ruta para descomprimir el repositorio}}{29}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Ruta del directorio test bench}}{29}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Archivos ubicados en test bench}}{30}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Visor de se\~nales GTKWave.}}{30}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Formatos de las se\~nales.}}{30}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Insertar un comentario.}}{31}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Agrupar se\~nales.}}{31}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Invocando el visor Surfer.}}{31}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Interfaz de Surfer.}}{32}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Dialogo de abrir archivo de Surfer.}}{32}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces A\~nadir se\~nales.}}{32}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Examinando se\~nales.}}{33}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Insertar un separador.}}{33}{figure.caption.32}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Renombrar el separador.}}{34}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Script yosys\_stats.}}{34}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Estadisticas del dise\~no.}}{35}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Script run\_librelane.}}{35}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.27}{\ignorespaces Folders de salida de cada estapa.}}{36}{figure.caption.37}%
+\contentsline {figure}{\numberline {4.28}{\ignorespaces Contenidos de la carpeta final.}}{37}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.29}{\ignorespaces Archivo tt\_um\_counter\_top.mag.}}{37}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.30}{\ignorespaces Layout del dise\~no.}}{38}{figure.caption.40}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Mejoras en la interfaz CAN}}{40}{figure.caption.41}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Modelos 3d de circuitos integrados.}}{45}{figure.caption.46}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Otro modelo 3D.}}{46}{figure.caption.47}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Placa Tinytapeout}}{46}{figure.caption.48}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Modelo OSI.}}{47}{figure.caption.49}%

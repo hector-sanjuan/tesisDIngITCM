@@ -1,0 +1,48 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{Resumen}{}{Doc-Start}%
+\contentsline {section}{Indice de Tablas}{}{chapter*.1}%
+\contentsline {section}{Indice de Figuras}{}{chapter*.1}%
+\contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Planteamiento del problema.}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objetivo general}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Objetivos espec\IeC {\'\i }ficos}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Hip\'otesis $H_0$}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Justificaci\'on del estudio}{3}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Organizaci\'on del protocolo de investigaci\'on}{3}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Marco te\'orico}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Protocolo de Comunicaci\'on CAN}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Historia de CAN}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Red CAN}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Ventajas del bus CAN}{8}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Comunicaci\'on serial CAN}{9}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Funcionamiento del ASIC}{10}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Antecedentes}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Estudio de Red CAN}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Estudio de CAN ASIC}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Documento de C\_CAN}{13}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Estudio de Macro Memory Cell Generator}{14}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Metodolog\IeC {\'\i }a}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Especificaci\'on de variables}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Ciclo de dise\~no}{18}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Dise\~no utilizado}{18}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Implementaci\'on}{19}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Instrumentos de medici\'on empleados}{20}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Materiales Empleados}{21}{section.4.6}%
+\contentsline {section}{\numberline {4.7}DO-254 DAL A}{21}{section.4.7}%
+\contentsline {section}{\numberline {4.8}FABulous FPGA}{23}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Celdas Parametrizables (Pcells)}{23}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Open MPW}{26}{subsection.4.8.2}%
+\contentsline {section}{\numberline {4.9}Herramientas IIC-OSIC-TOOLS}{27}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Docker}{27}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}GTKWave}{30}{subsection.4.9.2}%
+\contentsline {subsection}{\numberline {4.9.3}Surfer}{31}{subsection.4.9.3}%
+\contentsline {subsection}{\numberline {4.9.4}Yosys Stats}{34}{subsection.4.9.4}%
+\contentsline {subsection}{\numberline {4.9.5}Librelane}{35}{subsection.4.9.5}%
+\contentsline {chapter}{\numberline {5}Resultados esperados}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Contribuciones}{40}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Propuesta de Soluci\'on}{40}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Comentarios finales}{41}{chapter.6}%
+\contentsline {chapter}{Glosario}{42}{chapter*.42}%
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{42}{chapter*.42}%
+\contentsline {chapter}{Anexos}{44}{section*.44}%
+\contentsline {chapter}{Anexo A}{45}{appendix*.45}%

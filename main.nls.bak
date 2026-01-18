@@ -1,0 +1,10 @@
+
+\begin{thenomenclature} 
+\nomgroup{A}
+  \item [{AFM}]\begingroup Análisis de flujos metabólicos\nomeqref {1.0}\nompageref{2}
+\nomgroup{O}
+  \item [{$D$}]\begingroup Tasa de dilución\nomeqref {4.1}\nompageref{9}
+  \item [{$f$}]\begingroup Flujo de alimentación\nomeqref {4.1}\nompageref{9}
+  \item [{$V$}]\begingroup Volumen de trabajo del reactor\nomeqref {4.1}\nompageref{9}
+
+\end{thenomenclature}
