@@ -1,0 +1,85 @@
+\documentclass[letterpaper,openright,12pt]{report}
+
+%% EN ESTA SECCIÓN ES POSIBLE AGREGAR PAQUETES DE LIBRERÍA QUE LE
+%% AGREGUEN ALGUNA FUNCIONALIDAD EN PARTICULAR QUE DESEE AISLARSE EN
+%% EL PRESENTE CAPÍTULO
+%%
+%\usepackage{amsmath}
+%\usepackage{amssymbol}
+
+\begin{document}
+
+{
+	\input{capitulos}
+	\chapter{Antecedentes}}
+
+Buscando información no se encontró un estudio previo en español acerca de la implementación CAN en un chip a nivel doctorado. Aunque existen algunas tesis de maestría acerca del uso de este protocolo. Por ejemplo, encontré una tesis de maestría de Edilberto Lopez Perez.titulada ESPECIFICACION FORMAL DEL PROTOCOLO DE COMUNICACIONES CAN FD (Flexible Data Rate) MEDIANTE SDL (Specification and Description Language). Donde se especifica el comportamiento este protocolo. Para ello se usa un lenguaje de diagramas de alto nivel tipo UML que permite describir la jerarquía del sistema. Pero solo se realiza la simulación de este y no se implementa ni se hacen pruebas en una red CAN real.
+ 
+\section{Estudio de Red CAN}
+También encontré otra tesis de maestría de Ramon Ariel Vela Xool. DESARROLLO SISTEMA PARA MONITOREO E INTERACCION CON SEÑALES DE BUS CAN. En este trabajo se muestra como implementar un controlador CAN con un Arduino y una librería para la comunicación con este protocolo. Así mismo se monitorean los datos desde una computadora en una red CAN de dos nodos. Esta podría consultarse más adelante para ver como establecer una red.
+
+\section{Estudio de CAN ASIC}
+También encontré una tesis de maestría de SREERAM KRISHNAMOORTHY, llamada DESIGN OF AN ASIC CHIP FOR A CONTROLLER AREA NETWORK (CAN) PROTOCOL CONTROLLER. En esta tesis se implementa el protocolo CAN a nivel RTL (register transfer level) en un chip. La diferencia es que no usa herramientas open source sino otras llamadas Magma tools para la realización física del diseño y Cadence Verplex para la verificación lógica. Este trabajo sin embargo puede resultar útil para basarme en cómo se logró la implementación de este protocolo y estudiar el diagrama de bloques del sistema implementado en un chip.
+
+\section{Documento de C\_CAN}
+Otro documento importante en el que puedo apoyar mi trabajo es el manual del usuario C\_CAN de la compañía Bosch. De acuerdo a este, C\_CAN es un módulo escrito en VHDL que está listo para síntesis (es decir se puede convertir a un chip). Aunque no muestra ese código, trae la descripción del sistema por medio de diagramas de bloques. También explica como configurar y que función tienen cada uno de los registros que tendrá este chip. Sin embargo, no menciona que herramientas se pueden usar o como hacer la síntesis.
+
+\section{Estudio de Macro Memory Cell Generator}
+Otro trabajo interesante es el de Uriel Jaramillo Toral llamado Macro Memory Cell Generator for SKY130 PDK. En esta publicación se muestra el uso de OpenLane para realizar configuraciones de memoria SRAM según sea las necesidades del diseñador. Lo interesante es que usa la misma plataforma que se pretende usar para este proyecto de modo que se puede aprovechar la experiencia en el uso de esta herramienta.
+
+\begin{table}[H]
+\centering
+\caption{Antecedentes - Artículos.}
+\label{tab:Papers}
+\begin{tabular}{| p{1cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
+\hline
+%\multicolumn{4}{|c|}{\bf{} }\\\hline
+\bf ID & \bf Nombre del Trabajo & \bf Autores (APA) & \bf Ahorro de Energía? &
+\bf Amplio Rango de Temperatura? & \bf Dualidad de Canales? & \bf Velocidad de Operación? \\
+
+\hline
+
+\cline{1-7}
+
+%$\times$
+%\ding{55}
+
+1 & Low Power Design Techniques for ASICs & Sherif, M. S., et al. (2018) \cite{Sherif2018} & Proporciona estrategias avanzadas para minimizar el consumo energético en ASICs & \XSolid & \XSolid & \XSolid \\
+\cline{1-7}
+2 & Dynamic Voltage Scaling in Embedded Systems & Lee, Y. K., et al. (2015) \cite{Lee2015} & Optimización del consumo energético mediante DVFS en sistemas embebidos & \XSolid & \XSolid & Puede mejorar indirectamente la velocidad al ajustar la frecuencia \\
+\cline{1-7}
+3 & Temperature-Aware Circuit Design for Automotive Applications & Benini, L., et al. (2016) \cite{Benini2016}  & \XSolid & Diseño resistente a variaciones de temperatura en aplicaciones automotrices & \XSolid & \XSolid \\
+\cline{1-7}
+4 & High-Speed CAN Protocol Implementation in Automotive Systems & Rojas, R., et al. (2016) \cite{Rojas2016} & \XSolid & \XSolid & Mejora el manejo de múltiples canales CAN & Propone mejoras específicas en la velocidad de operación en redes CAN \\
+\cline{1-7}
+5 & Dual-Channel CAN Controller for Real-Time Applications & NXP Semiconductors (2020) \cite{NXP2020} & \XSolid & \XSolid & Controlador CAN con doble canal optimizado para tiempo real & Optimización para aplicaciones con alta demanda en tiempo real \\
+\cline{1-7}
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Antecedentes - Patentes.}
+\label{tab:Patents}
+\begin{tabular}{| p{1cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
+\hline
+%\multicolumn{4}{|c|}{\bf{} }\\\hline
+\bf ID & \bf Nombre del Trabajo & \bf Autores (APA) & \bf Ahorro de Energía? &
+\bf Amplio Rango de Temperatura? & \bf Dualidad de Canales? & \bf Velocidad de Operación? \\
+
+\hline
+\cline{1-7}
+1 &	Dual-Channel Communication Controller for Integrated Circuits & Bosch GmbH (2015) \cite{Bosch2015} & \XSolid & \XSolid &	Proporciona soporte para dos canales de comunicación en un controlador CAN & Optimizado para aplicaciones automotrices con alta demanda de velocidad \\
+\cline{1-7}
+2 & Energy-Efficient Communication Protocols for Embedded Systems & Zhao, R., et al. (2018) \cite{Zhao2018} & Propone estrategias para reducir el consumo energético en sistemas embebidos & \XSolid & \XSolid & \XSolid \\
+\cline{1-7}
+3 & Wide-Temperature Range ICs for Harsh Environments & Honeywell Inc. (2015) \cite{Honey2015} & \XSolid & Diseñado específicamente para operar en entornos con temperaturas extremas & \XSolid & \XSolid \\
+\cline{1-7}
+4 & Dynamic Voltage Scaling in ASICs & Texas Instruments (2017) \cite{TI2017} & Optimización energética mediante escalado dinámico de voltaje & \XSolid & \XSolid & Mejora indirecta en la velocidad de operación mediante ajustes dinámicos \\
+\cline{1-7}
+5 & Dual-Channel CAN Controller for Real-Time Applications & NXP Semiconductors (2020) \cite{NXP2020RT} & \XSolid & \XSolid & Controlador CAN con doble canal optimizado para aplicaciones en tiempo real & Mejora significativa en velocidad para sistemas en tiempo real \\
+\cline{1-7}
+\end{tabular}
+\end{table}
+
+\end{document}

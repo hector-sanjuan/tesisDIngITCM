@@ -1,0 +1,402 @@
+\documentclass[letterpaper,openright,12pt]{report}
+
+%% EN ESTA SECCIÓN ES POSIBLE AGREGAR PAQUETES DE LIBRERÍA QUE LE
+%% AGREGUEN ALGUNA FUNCIONALIDAD EN PARTICULAR QUE DESEE AISLARSE EN
+%% EL PRESENTE CAPÍTULO
+%%
+
+\begin{document}
+	
+{
+	\input{capitulos}
+	\chapter{Metodología}}
+
+Es posible diseñar y desarrollar un circuito integrado a la medida que provea dos canales CAN, que permita un reducido número de componentes electrónicos en redes de comunicación complejas y que pueda conectar a una red de alta velocidad y baja velocidad al mismo tiempo.
+
+\section{Especificación de variables}
+Las variables independientes quedarían como sigue; el tipo de protocolo: CAN. Tecnología de fabricación del circuito integrado: 130 nm (nanómetros). Configuración del circuito integrado: ASIC. Velocidad de transmisión: 500 kbps. Codificación de datos: NRZ (Non return to zero) con relleno de bits. Entorno operativo del circuito: Automotriz.
+
+Las variables dependientes serían las siguientes: Eficiencia energética, Fiabilidad de comunicación, Tiempo de latencia, Ancho de banda, Tamaño y complejidad del circuito integrado. Estabilidad del sistema.
+
+\section{Ciclo de diseño}
+Primero se analizarán las especificaciones del protocolo CAN. Después las características y capacidades de las herramientas de código abierto disponibles, como OpenLane. Finalmente se analizarán casos de uso del protocolo CAN en aplicaciones de electromovilidad.
+
+\section{Diseño utilizado}
+El primer paso es diseñar un modelo funcional del protocolo CAN utilizando lenguajes de descripción de hardware (HDL) que permita iteraciones eficientes durante el desarrollo. Para esto se modelarán las especificaciones del protocolo CAN en HDL y se crearán diagramas de bloques funcionales para definir la arquitectura del ASIC. También se definirán esquemas para la optimización del consumo energético y la mejora de la comunicación en escenarios con múltiples nodos. En toda esta estapa se realizarán simulaciones para verificar la lógica del diseño y correcto funcionamiento, Fig. 4.1.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic7.jpg}
+	\caption{Simulación del diseño en Verilog.}
+	\label{Sim} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\newpage
+
+\section{Implementación}
+Al mismo tiempo de las simulaciones se realizarán pruebas físicas con un FPGA. Esto validara el desempeño del ASIC en una red CAN real, evaluando la confiabilidad y eficiencia del diseño. En caso de ser necesario se realizarán ajustes iterativos en función de los resultados obtenidos, algo similar a la fig. 4.2. Al final de esto se generará el archivo GDS (Graphic Data System) usando OpenLane (fig. 4.3) para manufacturar el ASIC que cumple con el estándar CAN.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic8.jpg}
+	\caption{Modelo para crear prototipos.}
+	\label{Modelo} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic9.jpg}
+	\caption{Generacion del archivo GDSII usando OpenLane.}
+	\label{GDSII} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Optimizar el consumo energético del ASIC a través de técnicas avanzadas de diseño, garantizando su viabilidad en aplicaciones reales. Evaluar el rendimiento del ASIC en escenarios de alta carga de datos y múltiples nodos conectados. Documentar las mejoras implementadas y los resultados obtenidos.
+
+\section{Instrumentos de medición empleados}
+Para los instrumentos de medición empleados se necesitará de un osciloscopio que permita monitorear las señales generadas por el chip. Fig. 4.4
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic10.jpg}
+	\caption{Señales CAN siendo monitoreadas.}
+	\label{Señales} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\newpage
+
+\section{Materiales Empleados}
+Entre estos serán necesarios algunos microcontroladores para poder controlar los módulos CAN. También se usara un FPGA de Virtex XSV-100 para hacer pruebas físicas, Fig. 4.5. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic11.jpg}
+	\caption{Placa FPGA Virtex XSV-100.}
+	\label{Placa} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\section{DO-254 DAL A}
+
+DO-254 DAL A representa el nivel más alto de garantía de diseño para hardware electrónico aeronáutico.
+
+Aspectos clave de DO-254 DAL A:
+
+\begin{itemize} \item Máxima criticidad: \end{itemize}
+
+Un fallo en un componente DAL A podría impedir que la aeronave continúe volando con seguridad o provocar su pérdida.
+
+\begin{itemize} \item Procesos rigurosos: \end{itemize}
+
+El desarrollo para DAL A exige las actividades de diseño, verificación y validación más rigurosas.
+
+\begin{itemize} \item Ejemplos de sistemas: \end{itemize}
+
+DAL A se aplica generalmente a hardware crítico como sistemas de control de vuelo, sistemas de navegación y otras funciones donde un fallo sería catastrófico.
+
+\begin{itemize} \item Verificación y validación estrictas: \end{itemize}
+
+Todos los procesos y la lógica de diseño se someten a una evaluación minuciosa, y todos los requisitos y su implementación se verifican exhaustivamente.
+
+\begin{itemize} \item Independencia: \end{itemize}
+
+Para DAL A, la norma exige un alto grado de independencia en las revisiones y verificaciones para garantizar la objetividad.
+
+Criticidad
+En sistemas embebidos, la criticidad se refiere al grado de daño que puede causar una falla del sistema, desde inconvenientes menores hasta pérdidas catastróficas de vidas, bienes o el medio ambiente.
+
+0.2 Concepto de referencia de documentos SAE: La norma ISO 15031 hace referencia a varios documentos SAE que contienen todas las definiciones de términos, datos y códigos de diagnóstico de fallas (DTC). Esto se ilustra en la Figura 1. A continuación, se proporciona información adicional sobre el contenido de los documentos referenciados: ? SAE J1930: este documento trata sobre un procedimiento para nombrar objetos y sistemas, así como sobre el conjunto de palabras que componen dichos nombres. Hace referencia a SAE J1930-DA, que contiene todos los nombres estandarizados de objetos, términos y abreviaturas.
+
+\section{FABulous FPGA}
+
+FABulous es un marco de trabajo FPGA integrado que se utiliza para generar estructuras FPGA personalizadas. FABulous proporciona un ecosistema completo con integración en las herramientas EDA Yosys y nextpnr. FABulous admite una configuración basada en tramas de la estructura FPGA. En lugar de un registro de desplazamiento grande, los bits de configuración se direccionan mediante las señales FrameData y FrameStrobe.
+
+Para diseñar un circuito integrado (CI), se necesita un PDK para el proceso objetivo. Algunos PDK sacrifican algo de rendimiento a cambio de reglas menos estrictas que permiten mapear el PDK a varios procesos. Los PDK se pueden considerar compuestos por varios niveles: en el nivel más bajo se encuentra información sobre el proceso, las reglas de diseño y los modelos para dispositivos primitivos como transistores NMOS y PMOS.
+
+\subsection{Celdas Parametrizables (Pcells)} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic20.jpg}
+	\caption{Proceso SG13G2.}
+	\label{SG13G2} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+En este trabajo, se selecciona el PDK de código abierto ihp-sg13g2, diseñado para el proceso BiCMOS SG13G2 de 130 nm de IHP. En comparación con SKY130, donde la longitud del canal es de 150 nm, SG13G2 es un proceso de 130 nm real,
+con una longitud de canal de 130 nm. SG13G2 presenta una menor densidad lógica debido a interconexiones más gruesas (mayor ancho mínimo y espaciado) y a celdas estándar menos optimizadas en el PDK de código abierto (actualmente).
+
+Un flujo de diseño digital, también llamado flujo de diseño ASIC, realiza la implementación física de
+un diseño digital. Celdas AND-OR-Invert (AOI) u OR-AND-Invert (OAI). Las celdas AOI son celdas lógicas construidas con una o más puertas AND conectadas a una puerta NOR. OAI es la inversa: una o más puertas OR conectadas a una puerta NAND. Un SCL también contiene elementos de almacenamiento como biestables y biestables. El objetivo del flujo de diseño digital es pasar del código HDL al diseño final del circuito, asegurando que el diseño generado sea igual al circuito original y no infrinja ninguna regla de diseño.
+
+El proyecto OpenROAD se lanzó en 2018. Su objetivo es eliminar las barreras de costo, experiencia e imprevisibilidad que actualmente dificultan el trabajo de los diseñadores. OpenROAD por sí solo no es un flujo de diseño digital completo. Primero, es necesario sintetizar el código RTL del diseño y, finalmente, preparar el diseño para su fabricación (acabado). LibreLane es una biblioteca de infraestructura que permite la construcción de flujos de diseño de ASIC digitales.
+
+El flujo clásico predeterminado, por ejemplo, es un flujo de diseño digital basado en herramientas de código abierto
+como Yosys, OpenROAD, magic, KLayout y netgen para traducir el código RTL a GDSII y realizar comprobaciones DRC y LVS. LibreLane se describe como una biblioteca de infraestructura, lo que significa que se centra en la integración de otras herramientas como pasos en el flujo.
+
+Los flujos y pasos se pueden configurar mediante diversos formatos de configuración, como JSON, TCL o YAML. Cocotb es un entorno de pruebas de cosimulación de código abierto basado en corrutinas. Dado que cocotb está escrito principalmente en Python, los bancos de pruebas también están escritos en Python, lo que proporciona un amplio ecosistema de módulos de Python y código de ejemplo.
+
+Una característica común de los sistemas embebidos es que el hardware en campo no se puede simplemente reemplazar ni actualizar. Una solución a este problema se presenta en moreMCU: Una plataforma RISC-V reconfigurable en tiempo de ejecución para sistemas embebidos sostenibles. Este trabajo es similar a Greyhound, aunque difiere en un aspecto clave: Greyhound implementa su SoC y eFPGA en un ASIC y no utiliza una FPGA comercial estándar.
+
+Greyhound también permite reconfigurar la eFPGA para proporcionar extensiones de instrucciones personalizadas o periféricos personalizados, aunque no ambos simultáneamente. Si bien para pequeñas cantidades una solución basada únicamente en FPGA podría ser rentable, los sistemas embebidos a menudo se implementan en grandes cantidades, donde una implementación en ASIC resulta económicamente viable.
+
+Implementar las partes estáticas del sistema en un ASIC también presenta otras ventajas, como un mayor rendimiento y un menor consumo de energía en comparación con una implementación en FPGA en el mismo nodo de proceso. Un diseño más comparable es FlexBex de Nguyen et al. Su trabajo presenta una eFPGA acoplada directamente a un núcleo Ibex RISC-V fabricado mediante un proceso TSMC de 180 nm.
+
+FlexBex permite configurar la eFPGA mediante comunicación serial externa o mediante la transmisión del flujo de bits directamente desde el núcleo RISC-V utilizando una instrucción personalizada. A diferencia de Greyhound, FlexBex no permite conectar periféricos personalizados de la eFPGA al bus del sistema del SoC. Mientras que FlexBex permite retrasar las instrucciones de 0 a 15 ciclos, Greyhound utiliza el campo funct7 en el formato de instrucción de tipo R, con un total de 0 a 127 ciclos de retardo.
+
+Otra diferencia importante es que Greyhound se desarrolló utilizando herramientas EDA de código abierto y el PDK de código abierto de IHP, mientras que la implementación física de FlexBex se realizó utilizando herramientas y un PDK propietarios. Se han presentado varias propuestas para Open MPW con FPGA FABulous que utilizan sky130: FPGA FABulous [39] en MPW2, FuseRISC2 en MPW3 y la totalmente abierta eFPGA FABulous en MPW5.
+
+\subsection{Open MPW} 
+
+Para las propuestas de Open MPW, solo se implementó el proyecto de usuario del arnés Caravel. El arnés Caravel en sí, con el SoC RISC-V, es un sistema fijo que se reutiliza para todas las propuestas de Open Multi-ProjectWafer (MPW).
+
+Greyhound no es el primer chip con SoC diseñado con el PDK de código abierto de IHP. Basilisk en 2024 y MLEM en 2025 son dos ejemplos de SoC de código abierto diseñados con herramientas EDA de código abierto y un PDK de código abierto. Basilisk es un SoC RISC-V de 64 bits totalmente compatible con Linux, con un área de chip de 34 mm$^{2}$. Incluye una amplia gama de periféricos como HyperRAM, USB 1.1 y VGA. Basilisk no contiene lógica reconfigurable, como una eFPGA.
+
+MLEM es una implementación de la plataforma SoC Croc. Se trata de una plataforma educativa con un dominio de usuario específico, similar al arnés Caravel de Open MPWruns. Existen varios esfuerzos para proporcionar una interfaz común de instrucciones personalizadas con diversas funcionalidades. Uno de ellos es SCAIE-V. SCAIE-V admite varias operaciones, como lecturas del banco de registros, escrituras en el banco de registros, acceso al contador de programa y más.
+
+Para Greyhound, optamos por el núcleo RISC-V CV32E40X del Grupo OpenHW, con soporte para la interfaz de instrucciones personalizadas CORE-V-XIF. Esto es similar a las restricciones de FRANCIS-V, un marco de integración para generar extensiones de instrucciones personalizadas de tipo R de un solo ciclo con dos registros fuente (rs1 y rs2) y un registro destino (rd).
+
+\section{Herramientas IIC-OSIC-TOOLS} 
+\subsection{Docker}
+
+
+Para instalar Docker primero se descarga este desde la pagina de Microsoft. Después se descargan las herramientas IIC-OSIC-TOOLS de github. Después se descomprimen las herramientas ejecutando winzip o 7z. En el directorio que se genera se ejecuta el archivo start\_x.bat desde una terminal. Antes de abrir el contenedor de Docker, se debe crear una cuenta y confirmar el correo.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic21.jpg}
+	\caption{Ejecutando el archivo start\_x.bat.}
+	\label{startx} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\newpage
+Este error se debe a que primero hay que registrarse y confirmar en Docker el correo electrónico:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./pics/pic22.jpg}
+	\caption{Error de Docker.}
+	\label{Docker} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Después se bajar el repositorio kvic\_336007\_ws25 de github:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic23.jpg}
+	\caption{Repositorio kvic\_336007\_ws25}
+	\label{kvic} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\newpage
+Se descomprime y copia este en C:\textbackslash Users\textbackslash usuario\textbackslash eda\textbackslash designs:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic24.jpg}
+	\caption{Ruta para descomprimir el repositorio}
+	\label{Ruta} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Abrimos Docker y ejecutamos el contenedor. Se nos abrira una ventana de Linux. Ahi nos cambiamos de directorio con: cd kvic\_336007\_ws25-main/verilog/tb
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic25.jpg}
+	\caption{Ruta del directorio test bench}
+	\label{bench} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Examinamos los contenidos de este folder con ls:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic26.jpg}
+	\caption{Archivos ubicados en test bench}
+	\label{bench2} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\newpage
+Ejecutamos el archivo ./simulate.sh counter para simular el diseño Verilog del contador.
+
+
+\subsection{GTKWave}
+
+Se abrirá la ventana de GTKWave donde podemos ver la simulación.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic27.jpg}
+	\caption{Visor de señales GTKWave.}
+	\label{GTKWave} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Se deben seleccionar las señales que aparecen en la ventana izquierda de abajo para poder verlas en el lado derecho con doble clic. Se puede cambiar el formato de presentación de binario a hex u otros con clic derecho sobre la señal.
+
+También se puede copiar y pegar y tener la misma señal con diferente formato seleccionando Data Format:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic28.jpg}
+	\caption{Formatos de las señales.}
+	\label{GTKWave2} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+También se pueden insertar comentarios con Insert Comment:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic29.jpg}
+	\caption{Insertar un comentario.}
+	\label{GTKWave3} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Para poder agrupar las señales y encontrarlas mas fácil:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic30.jpg}
+	\caption{Agrupar señales.}
+	\label{GTKWave4} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+No olvide guardar los cambios con ctrl-s. Si desea cargar el archivo de nuevo presione ctrl-o. Esto cargara las señales del archivo sobre las que ya están, de modo que se deben primero quitar la señales si no desea que esto ocurra.
+
+\subsection{Surfer}
+
+Otra opción para visualizar señales es Surfer. Para invocarlo se escribe Surfer.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic31.jpg}
+	\caption{Invocando el visor Surfer.}
+	\label{Surfer1} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Para abrir el archivo se da clic en el icono de la carpeta:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic32.jpg}
+	\caption{Interfaz de Surfer.}
+	\label{Surfer2} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Seleccionamos counter\_tb.vcd en dialogo para seleccionar el archivo:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic33.jpg}
+	\caption{Dialogo de abrir archivo de Surfer.}
+	\label{Surfer3} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Aquí podemos agregar la señales en una forma similar a GTKWave pero en este caso solo es necesario dar un solo clic para visualizarlas.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic34.jpg}
+	\caption{Añadir señales.}
+	\label{Surfer4} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Las formas de onda se pueden expandir o comprimir seleccionando una señal y después moverla con la rueda del mouse.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.1\textwidth]{./pics/pic35.jpg}
+	\caption{Examinando señales.}
+	\label{Surfer5} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\newpage
+Damos clic derecho a una señal y selecciona Insert \textendash Divider.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic36.jpg}
+	\caption{Insertar un separador.}
+	\label{Surfer6} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\newpage
+Se creara un espacio en blanco damos clic derecho sobre ese espacio y le damos rename. Así podremos poner secciones como en GTKWave:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic37.jpg}
+	\caption{Renombrar el separador.}
+	\label{Surfer7} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+
+\subsection{Yosys Stats}
+
+Ahora nos cambiamos al folder de src, cd .., cd src y ejecutamos ls para ver los archivos:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic39.jpg}
+	\caption{Script yosys\_stats.}
+	\label{yosys} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Y ejecutamos el comando ./yosys\_stats.sh counter. Este comando nos mostrara unas estadísticas de los recursos que esta consumiendo nuestro diseño.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic40.jpg}
+	\caption{Estadisticas del diseño.}
+	\label{yosys2} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\subsection{Librelane}
+
+Ahora nos cambiamos al folder de librelane con cd .., cd .., cd librelane, ls. Y corremos ./run\_librelane.sh. Esto ejecutara todas los pasos, que son 78, por ejemplo place and route, para generar el chip.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic41.jpg}
+	\caption{Script run\_librelane.}
+	\label{libre} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+
+En Windows en la carpeta C:\textbackslash Users\textbackslash usuario\textbackslash eda\textbackslash designs\textbackslash kvic\_336007\_ws25-main\textbackslash librelane\textbackslash runs se encuentran casi todos los resultados de los pasos que la herramienta librelane realiza para tener el diseño final del chip. En la figura se muestra algunos de estos folders.
+
+\newpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic42.jpg}
+	\caption{Folders de salida de cada estapa.}
+	\label{libre2} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+
+También tenemos la carpeta final donde tenemos los resultados del diseño. Tenemos por ejemplo la carpeta gds. La carpeta mag donde esta el archivo magic. O la carpeta spice donde se tiene un archivo para simulación con este programa. En la figura se muestra los contenidos de este folder final.
+
+\newpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic43.jpg}
+	\caption{Contenidos de la carpeta final.}
+	\label{libre3} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Si vamos al folder mag en Docker cd kvic\_336007\_ws25-main/librelane/runs/RUN\_2025-10-29\_21-56-10/final/mag
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic44.jpg}
+	\caption{Archivo tt\_um\_counter\_top.mag.}
+	\label{libre4} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+Podremos visualizar el layout del diseño con el comando magic tt\_um\_counter\_top.mag.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./pics/pic45.jpg}
+	\caption{Layout del diseño.}
+	\label{libre5} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\end{document}

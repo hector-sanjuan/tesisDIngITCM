@@ -1,0 +1,63 @@
+\documentclass{report}
+
+\begin{document}
+
+{
+	\input{capitulos}
+	\chapter{Introducción}}
+	
+\pagenumbering{arabic}
+\setcounter{page}{1}%aqui se pone el número de página
+
+Las herramientas necesarias usadas en el diseño y verificación de circuitos integrados son generalmente de difícil acceso por 
+su costo y términos de uso. Recientemente las herramientas open source ha tomado fuerza y existe una en especial llamada OpenLane. 
+En este anteproyecto se busca exponer porque es buena idea considerar su uso explorando sus cualidades.
+
+
+\newpage
+
+\section{Planteamiento del problema.}
+\label{Planteamiento:Cap:1}
+¿Cuáles son los pasos para la elaboración de un chip? Se desear saber cómo implementar un chip usando herramientas open source. Existen hoy en día varias herramientas y plataformas de libre acceso que permiten desarrollar chips. El objetivo de esta investigación seria el de estudiar alguna plataforma y de ahí partir hacia la implementación de un protocolo de comunicación. 
+
+\section{Objetivo general}
+
+Diseñar y desarrollar un circuito integrado de aplicación específica ASIC basado en tecnología nanométrica (130 nm) que implementa el protocolo serial de comunicación CAN en dos canales.
+
+\section{Objetivos específicos}
+  \begin{itemize}
+         \item Objetivo específico 1
+         
+Implementar un chip. Diseñar un proceso iterativo basado en el lenguaje de descripción de hardware (HDL).
+    
+         \item Objetivo específico 2
+         
+Emplear herramientas de aparición reciente como OpenLane para diseñar application-specific integrated circuits (ASICS).
+
+         \item Objetivo específico 3
+         
+Definir el funcionamiento del protocolo CAN a nivel de chip orientado hacia aplicaciones de electromovilidad (complemento al anteproyecto doctoral de José Federico Chong Flores). Probar el correcto funcionamiento del diseño ASIC mediante una serie de pruebas virtuales y físicas al tiempo que se conocen los pasos necesarios para el diseño e implementación de un chip.
+  \end{itemize}
+
+\section{Hipótesis $H_0$}
+Es posible usar las herramientas open source para diseñar e implementar circuitos integrados.
+
+\section{Justificación del estudio}
+CAN se usa en muchas aplicaciones industriales, sin embargo, no existe ningún circuito integrado de diseño mexicano. Por otro lado, de acuerdo con Conacyt es relevante para el país fomentar la independencia tecnológica de México. (Fig. 1.1).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic1.jpg}
+	\caption{Programa Especial de Ciencia, Tecnología e Innovación (CTI) 2021-2024.}
+	\label{ProgramaEsp} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\section{Organización del protocolo de investigación}	
+Esta organizado en torno a la tecnología CAN. En este caso se busca implementar este protocolo de comunicación serial en un FPGA y después de pasar a un ASIC una vez realizada la etapa de pruebas y verificaciones del modelo en HDL.
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../"
+%%% End:

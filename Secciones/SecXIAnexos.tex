@@ -1,0 +1,61 @@
+\documentclass{article}
+
+%% EN ESTA SECCIÓN ES POSIBLE AGREGAR PAQUETES DE LIBRERÍA QUE LE
+%% AGREGUEN ALGUNA FUNCIONALIDAD EN PARTICULAR QUE DESEE AISLARSE EN
+%% EL PRESENTE CAPÍTULO
+%%
+%% EN EL CASO DE LOS APÉNDICES, EN OCASIÓN ES PREFERIBLE UTILIZAR UN
+%% ARCHIVOS INDEPENDIENTES POR CADA UNO DE ELLOS, SE DEBE EMPLEAR EL
+%% COMANDO \include{} PARA PODER FACILITAR EL MANEJO DE ECUACIONES,
+%% TABLAS Y FIGURAS EN DICHO ARCHIVO.
+%%
+
+\begin{document}
+
+\appendix
+\renewcommand{\appendixname}{Anexo}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
+\clearpage
+\addappheadtotoc
+\appendixpage
+
+\newcommand{\mychapter}[2]{
+    \setcounter{chapter}{#1}
+    \setcounter{section}{0}
+    \chapter*{#2}
+    \addcontentsline{toc}{chapter}{#2}
+}
+
+\input{capitulosB}
+\mychapter{1}{Anexo A}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic13.jpg}
+	\caption{Modelos 3d de circuitos integrados.}
+	\label{Modelo1} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic14.jpg}
+	\caption{Otro modelo 3D.}
+	\label{Modelo2} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic15.jpg}
+	\caption{Placa Tinytapeout}
+	\label{Tiny} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic16.jpg}
+	\caption{Modelo OSI.}
+	\label{OSI} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\end{document}

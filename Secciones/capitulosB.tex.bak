@@ -1,0 +1,24 @@
+%% Formato para los Capítulos de la Tesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{myblack}{RGB}{0,0,0}
+%\definecolor{myblack}{RGB}{1,0.25,0.6}
+
+\titleformat{\chapter}[display]
+{\normalfont\bfseries\color{gray}}
+{\filleft\hspace*{-60pt}%
+	\rotatebox[origin=c]{90}{%
+		\normalfont\color{gray}\Large%
+		\textls[90]{\textsc{\chaptertitlename}}%
+	}\hspace{10pt}%
+	{\setlength\fboxsep{0pt}%
+		\colorbox{gray}{{%
+				\centering\color{white}\fontsize{80}{90}\selectfont\thechapter}%
+	}}%
+}
+{10pt}
+%{\flushright \titlerule[2.5pt]\vskip3pt\titlerule\vskip4pt\Huge\rmfamily}
+{\flushright \titlerule[2.5pt]\vskip3pt\titlerule\vskip4pt\Huge}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

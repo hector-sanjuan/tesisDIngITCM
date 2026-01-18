@@ -1,0 +1,44 @@
+\documentclass{report}
+
+%% LIBRERÍAS PARA LA GENERACIÓN DE ÍNDICES
+%%
+%\usepackage[left=3.5 cm, right=2.5 cm, top=3.5 cm, bottom=2.5 cm]{geometry}
+%\usepackage[utf8]{inputenc} % Permite utilizar símbolos con facilidad usados en el texto en español latinoamericano
+%\usepackage[OT1,T1]{fontenc} % Usa caracteres con acento y otros se insertan en PDF (requiere de babel y lmoodern para usarse directamente la entrada del ch)  
+%\usepackage[a-1b,latxmp,cyrxmp,armxmp,ipaxmp,LATxmp,KOIxmp]{pdfx} % Garantizar compatibilidad en PDF/ISO los símbolos son insertados en los metadatos apropiadamente PLUS las 
+
+%\usepackage{fancyhdr}
+%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+
+
+\begin{document}
+\newpage
+\tableofcontents
+\newpage
+%--------------------------------------------------------
+%Aquí se genera el índice de tablas (\listoftables)
+
+\fancypagestyle{detailed}{
+    \fancyhf{}
+    \fancyhead[L]{}
+     \fancyfoot[L]{}%
+     \fancyfoot[C]{}%
+     \fancyfoot[R]{\thepage}%
+    \fancyfoot[R]{\textcolor[cmyk]{1,1,1,1}{\thepage}}
+	%\fancyhead{}
+    \renewcommand{\headrulewidth}{0pt}
+ }
+ \renewcommand{\listtablename}{Indice de Tablas}
+ \renewcommand{\listfigurename}{Indice de Figuras}
+\listoftables
+\addcontentsline{toc}{section}{Indice de Tablas}
+\newpage
+%--------------------------------------------------------
+%Aquí se genera el índice de imágenes (\listoffigures)
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
+\listoffigures
+\addcontentsline{toc}{section}{Indice de Figuras}
+
+\end{document}

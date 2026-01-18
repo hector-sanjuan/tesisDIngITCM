@@ -1,0 +1,154 @@
+\documentclass{report}
+
+%% EN ESTA SECCIÓN ES POSIBLE AGREGAR PAQUETES DE LIBRERÍA QUE LE
+%% AGREGUEN ALGUNA FUNCIONALIDAD EN PARTICULAR QUE DESEE AISLARSE EN
+%% EL PRESENTE CAPÍTULO
+%%
+\usepackage{amsmath}
+\usepackage{amssymbol}
+
+\begin{document}
+
+{
+	\input{capitulos}
+	\chapter{Marco teórico}}
+
+A continuación, se mencionan los elementos que sientan las bases de este proyecto. Se explica cómo funciona este protocolo, su historia. También se expone lo que es un nodo CAN, como se conecta en la red y se muestra un ejemplo de una red CAN dentro de un automóvil. Además, se habla de sus ventajas y el formato de comunicación serial que se usa para transmitir los datos. El capítulo termina mostrando el diagrama de bloques de la implementación de este protocolo.
+
+\section{Protocolo de Comunicación CAN}
+
+CAN es un protocolo serial, multimaestro, multitransmisión. En el que todos los nodos pueden tener control del bus y también pueden transmitir y recibir. Los mensajes tienen prioridades estáticas fijas. Un nodo que este transmitiendo permanecerá así hasta que el bus este libre o hasta que un nodo con una prioridad más alta quiera transmitir. Un mensaje CAN tiene hasta 8 bytes de datos y el identificador de mensaje es empleado el nodo receptor para saber si el mensaje le corresponde. El bus es de alta velocidad puede transmitir @ 500kbit/s. Existen 4 tipos de mensajes CAN o ``cuadros de datos'': de datos, remoto, de error, de sobrecarga.
+
+El mensaje de datos es el mensaje standard de CAN que se transmite de un módulo a los demás nodos en el bus. El mensaje remoto se transmite para solicitar datos a un nodo especifico. El mensaje de error se transmite cuando un nodo detecta un error. Los mensajes de sobrecarga sirven para insertar retrasos entre mensajes. El tamaño del identificador del mensaje CAN puede ser de 11 o 29 bits.
+ 
+\section{Historia de CAN}
+
+En esta sección, se mencionan los momentos más importantes en la historia del protocolo CAN:
+\begin{itemize}
+\item 1983 - El desarrollo del bus CAN comenzó en Robert Bosch GmbH.
+\item 1986 - El protocolo se lanzó oficialmente en la conferencia de la Sociedad de Ingenieros Automotrices (SAE) en Detroit, Michigan.
+\item 1987 - Los primeros chips CAN son presentados por Intel (82526) y Philips (82C200).
+\item 1991 - Mercedes-Benz lanza el primer vehículo (W140) con un sistema de cableado CAN.
+\item 1991 - Bosch publica la especificación CAN 2.0.
+\item 1993 - La Organización Internacional de Normalización (ISO) publicó la norma CAN ISO 11898.
+\item 2012 - Bosch lanza el CAN FD 1.0, o CAN con velocidad de datos flexible ISO 11898-1.
+\end{itemize}
+
+\section{Red CAN}
+
+En esta sección se muestra lo que es un nodo CAN, como se conecta este dentro de la red, lo que sería una red CAN automotriz. En la fig. 2.1 se muestra que un Nodo CAN está conformado por un microcontrolador, un controlador CAN y el transceptor.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic2.jpg}
+	\caption{Nodo CAN.}
+	\label{Nodo} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+En la fig. 2.2 se aprecia una red CAN. Se puede notar que cada nodo tiene conectado un sensor como entrada al nodo puesto que se desea mandar esta información a otro punto de la red. También tiene como salida un Actuador puesto que este nodo también podría estar controlando algún dispositivo dentro de la red. Esta red debe tener terminadores para poder completar el circuito.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic3.jpg}
+	\caption{Red CAN con actuadores y sensores.}
+	\label{RedCan} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\newpage
+
+En la siguiente imagen (fig. 2.3) se puede aprecia una amplia colección de dispositivos que puede ser controlados y que pueden enviar información dentro de la red CAN en un auto. Cabe destacar que la red esta particionada en una sección de baja velocidad y otra de baja velocidad. Entre estas están:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic4.jpg}
+	\caption{Red CAN Automotriz.}
+	\label{RedCanAuto} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\begin{itemize}
+\item Viaje (medición de km recorridos)
+\item Radio, sonido, bluetooth
+\item Puerto de diagnósticos
+\item Control del clima
+\item Puerto de seguridad de pasajeros
+\item Transmisión
+\item Dirección
+\item Suspensión activa
+\item Máquina de C.I.
+\item Módulo central del chasis
+\item Clúster de instrumentos
+\item Luces
+\item Seguros
+\item Retrovisor
+\item Ventanas
+\item Cajuela
+\item Asientos
+\end{itemize}
+   
+\section{Ventajas del bus CAN}
+
+A continuación, se enumeran algunas razones por las que el protocolo CAN resulta popular en la industria:
+\begin{itemize}
+\item Sencillo y de bajo costo: las ECU se comunican a través de un único sistema CAN en lugar de complejas líneas directas
+\item Totalmente centralizado: el bus CAN proporciona un punto de entrada para comunicarse con todas las ECU de la red
+\item Extremadamente robusto: el sistema es robusto frente a perturbaciones eléctricas e interferencias electromagnéticas
+\item Eficiente: las tramas CAN se priorizan por números de identificación. 
+\item Reducción del peso del vehículo: mediante la eliminación de kilómetros de cables.
+\end{itemize}
+
+\section{Comunicación serial CAN}
+
+En la fig. 2.4 se muestra lo que sería el formato de una transmisión o mensaje CAN a nivel bits. Los datos se encuentran en la sección de Data y los 29 bits de ID (11 Bit Identifier + 18 Bit extensión) sirven para que el nodo receptor puede saber si acepta o no el mensaje recibido.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic5.jpg}
+	\caption{Campos de bits del mensaje CAN.}
+	\label{Campos} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Función de los campos de la trama CAN}
+\label{tab:Trama}
+\begin{tabular}{| w{c}{1cm} | p{4cm} | p{4cm} | p{1.5cm} |}
+\hline
+%\multicolumn{4}{|c|}{\bf{} }\\\hline
+\bf ID & \bf Nombre & \bf Función & \bf Tamaño en bits\\
+
+\hline
+
+\cline{1-4}
+1 & SOF (start of frame) & Inicio del cuadro o mensaje CAN & 1 \\
+\cline{1-4}
+2 & Identifier & Identificador de mensaje & 11 \\
+\cline{1-4}
+3 & SRR (Substitute Remote Request) & Para formato ext. & 1 \\
+\cline{1-4}
+4 & Identifier Extension & Extension del Identificador & 18 \\
+\cline{1-4}
+5 & IDE (Identifier for std. and ext. format) & Identificador de formato & 1 \\
+\cline{1-4}
+6 & RTR (Remote Transmission Request) & Para solicitar cuadros remotos & 1 \\
+\cline{1-4}
+7 & DLC (Data Length Code) & (Número de bytes 0-8) & 4 \\
+\cline{1-4}
+8 & Data Field & Datos a transmitir & 0 - 64 \\
+\cline{1-4}
+\end{tabular}
+\end{table}
+
+\section{Funcionamiento del ASIC}
+El protocolo CAN implementado en un chip consta de las siguientes partes mostradas en la fig. 2.5:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./pics/pic6.jpg}
+	\caption{Diagrama de bloques de un ASIC CAN.}
+	\label{Asic} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+
+
+\end{document}
+

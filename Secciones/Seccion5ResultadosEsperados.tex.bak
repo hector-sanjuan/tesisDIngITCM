@@ -1,0 +1,36 @@
+\documentclass[letterpaper,openright,12pt]{report}
+%\usepackage[utf8]{inputenc}
+
+%% EN ESTA SECCIÓN ES POSIBLE AGREGAR PAQUETES DE LIBRERÍA QUE LE
+%% AGREGUEN ALGUNA FUNCIONALIDAD EN PARTICULAR QUE DESEE AISLARSE EN
+%% EL PRESENTE CAPÍTULO
+%%
+%% Ejemplo de un comando que sirve para abreviar el trabajo de
+%% escritura permitiendo ser homogéneo al momento de escribir.
+%\newcommand{\chla}{\emph{Chlamydomonas reinhardtii}}
+
+\begin{document}
+	
+{
+	\input{capitulos}
+	\chapter{Resultados esperados}}
+
+Para este propósito se usarían la salida de las simulaciones durante la etapa de diseño y verificación. En la etapa de pruebas físicas se usarían los registros de los datos transmitidos. También se espera contar con el circuito integrado y fotos de este como prueba de que es posible implementar el diseño digital en forma física. Se espera generar un modelo o una vista 3d del circuito integrado para su visualización. Se espera contar con un entendimiento de como implementar un protocolo de comunicación. También se espera contar con el conocimiento de que es lo mínimo que se necesita para implementar un protocolo de forma funcional. Otro resultado será la tener una idea de como es el ciclo de desarrollo de circuitos integrados.
+
+\section{Contribuciones}
+A partir de la investigación se obtendrá el conocimiento para implementar circuitos ASIC. Tal vez esto abra la puerta para que más adelante se puedan crear más circuitos integrados dentro del Tec de Madero. También pueda haber más proyectos que usen la tecnología CAN y se pueda investigar más sobre este protocolo. Otra contribución sería la de dejar el material de enseñanza del curso de ZeroToAsic para que alguien más lo pueda utilizar ya que este curso tiene un costo y sería una buena opción tener este material de forma gratuita.
+
+\section{Propuesta de Solución}
+Se tendra una interfaz CAN que mejorar el estandar existente de alguna de las siguientes maneras: Mayor velocidad, menor consumo de energia, rango amplio de temperatura o doble interfaz CAN (fig. 5.1).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./pics/pic17.jpg}
+	\caption{Mejoras en la interfaz CAN}
+	\label{solucion} %Siempre incluir seguido de CAPTION.
+\end{figure}
+
+
+\end{document}
+
+

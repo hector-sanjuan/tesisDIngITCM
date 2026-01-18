@@ -1,0 +1,31 @@
+\documentclass{article}
+
+%% EN ESTA SECCIÓN ES POSIBLE AGREGAR PAQUETES DE LIBRERÍA QUE LE
+%% AGREGUEN ALGUNA FUNCIONALIDAD EN PARTICULAR QUE DESEE AISLARSE EN
+%% EL PRESENTE CAPÍTULO
+%%
+%% EN EL CASO DE LOS APÉNDICES, EN OCASIÓN ES PREFERIBLE UTILIZAR UN
+%% ARCHIVOS INDEPENDIENTES POR CADA UNO DE ELLOS, SE DEBE EMPLEAR EL
+%% COMANDO \include{} PARA PODER FACILITAR EL MANEJO DE ECUACIONES,
+%% TABLAS Y FIGURAS EN DICHO ARCHIVO.
+%%
+
+\begin{document}
+
+\newcommand{\mychapter}[2]{
+    \setcounter{chapter}{#1}
+    \setcounter{section}{0}
+    \chapter*{#2}
+    \addcontentsline{toc}{chapter}{#2}
+}
+
+\input{capitulosB}
+\mychapter{8}{Bibliografia}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{Secciones/fuentes}
+\vspace*{-60mm}
+
+
+\end{document}

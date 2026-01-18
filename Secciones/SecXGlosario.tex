@@ -1,0 +1,46 @@
+\documentclass{report}
+%% EN ESTA SECCIÓN ES POSIBLE AGREGAR PAQUETES DE LIBRERÍA QUE LE
+%% AGREGUEN ALGUNA FUNCIONALIDAD EN PARTICULAR QUE DESEE AISLARSE EN
+%% EL PRESENTE CAPÍTULO
+%%
+%% EN EL CASO DE LOS APÉNDICES, EN OCASIÓN ES PREFERIBLE UTILIZAR UN
+%% ARCHIVOS INDEPENDIENTES POR CADA UNO DE ELLOS, SE DEBE EMPLEAR EL
+%% COMANDO \include{} PARA PODER FACILITAR EL MANEJO DE ECUACIONES,
+%% TABLAS Y FIGURAS EN DICHO ARCHIVO.
+%%
+\begin{document}
+
+%{
+%\addcontentsline{toc}{chapter}{Glosario}
+%}
+
+\newcommand{\mychapter}[2]{
+    \setcounter{chapter}{#1}
+    \setcounter{section}{0}
+    \chapter*{#2}
+    \addcontentsline{toc}{chapter}{#2}
+}
+
+\input{capitulosB}
+\mychapter{7}{Glosario}
+	
+%\chapter*{Glosario}
+%\addcontentsline{toc}{chapter}{Glosario}
+%\appendix
+%\renewcommand{\appendixname}{Glosario}
+%\renewcommand{\appendixtocname}{Glosario}
+%\renewcommand{\appendixpagename}{Glosario}
+%\clearpage
+%\addappheadtotoc
+%\appendixpage
+
+
+
+Transceptor: Dispositivo que adecua las señales eléctricas a un nivel deseado.
+
+Verilog: Lenguaje de programación para diseñar hardware.
+interesen al lector, pero que ubicadas de este evitan ser una distracción durante la lectura.
+
+
+
+\end{document}

@@ -1,0 +1,200 @@
+%% Librerías del preámbulo de la plantilla del protocolo de proyecto del PCI
+%%
+\usepackage{nomencl} % En este caso es importante colocarse al principio del código.
+\usepackage[fixlanguage]{babelbib}
+     \selectbiblanguage{spanish}
+\usepackage[spanish,mexico]{babel} % Utiliza el lenguaje español
+\usepackage[left=3.5 cm, right=2.5 cm, top=3.5 cm, bottom=2.5 cm]{geometry}
+\usepackage{multirow} % usado para mejorar la apariencia de las tablas en cuanto a la alineación
+\usepackage{enumitem} % Permite realizar listas con diferentes niveles alineado el texto
+\usepackage{amsfonts} % or AMSSY Estilo de letras remarcado como el conjunto real
+\usepackage{amsmath} % Este paquete ayuda a escribir algunas expresiones matemáticas más complicadas.
+\usepackage{wasysym} % El orden parece afectar la compilación ERROR
+                     % ERROR SI SE PONE ANTES DE AMSMATH AMSMATH
+                     % AMSMATH
+                     
+\usepackage{mathptmx}
+\usepackage{anyfontsize}
+\usepackage[squaren]{SIunits}
+% \usepackage{t1enc}
+\usepackage{url}
+\usepackage{graphicx} % Requerido para usar la instrucción para incluir gráficas
+% \graphicspath{{../Figuras/}{../Figuras/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+% \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+%\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{wallpaper}
+\usepackage[justification=centering]{caption}
+\captionsetup{margin=0pt,font=small, textfont=rm,labelfont=bf}
+\captionsetup{margin=0pt,font={small},labelfont={bf}, textfont=it}
+\spanishdecimal{.}
+% \usepackage[caption=false]{subfig}
+\usepackage{pdfpages}
+\usepackage{afterpage}
+\usepackage{microtype}
+\usepackage{multicol} % Permite usar el glosario a dos columnas
+
+\setlength\parindent{0pt} % 0 sangría
+
+\usepackage{tikz} % exportar imágenes con formato PGF [WORKING+DIA]
+\usepackage{pstricks} % este es uno de los paquetes para insertar imágenes vectoriales utilizando algun paquete exportar imágenes con formato PSTricks
+% \usepackage{pslatex}
+
+\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{inputenc} % Permite utilizar símbolos con facilidad usados en el texto en español latinoamericano
+\usepackage[OT1,T1]{fontenc} % Usa caracteres con acento y otros se insertan en PDF (requiere de babel y lmoodern para usarse directamente la entrada del ch)  
+\usepackage[a-1b,latxmp,cyrxmp,armxmp,ipaxmp,LATxmp,KOIxmp]{pdfx} % Garantizar compatibilidad en PDF/ISO los símbolos son insertados en los metadatos apropiadamente PLUS las referencias a figuras, tablas y ecuaciones se vuelven un hipervínculo
+% \usepackage{lmodern}            % Usa a fonte Latin Modern          
+%\usepackage{cmap}               % Make PDF files searchable and copyable
+% \renewcommand{\baselinestretch}{1.5} % Iterlineado de 1.5
+
+
+\usepackage{lipsum}  % just for the example
+\usepackage{lscape}
+\usepackage{makeidx}
+\usepackage{cite}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{tablefootnote}
+\usepackage{longtable}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pifont}
+\let\Square\relax
+\usepackage{bbding}
+
+%% ENCABEZADOS DEL DOCUMENTO
+%%
+\usepackage{fancyhdr}
+	\pagestyle{fancy}
+	\lhead{}
+	\chead{}
+	\rhead{\textcolor[cmyk]{1,1,1,1}{\textit{\nouppercase \leftmark}}} % Nombre del capítulo. \nouppercase: uso de minúsculas
+	\lfoot{}
+	\cfoot{}
+	\rfoot{\textcolor[cmyk]{1,1,1,1}{\thepage}}
+	\renewcommand{\headrulewidth}{0pt}
+        
+\fancypagestyle{detailed}{
+    \fancyhf{}
+     \fancyfoot[L]{}%
+     \fancyfoot[C]{}%
+     \fancyfoot[R]{\thepage}%
+    \fancyfoot[R]{\textcolor[cmyk]{1,1,1,1}{\thepage}}
+	%\fancyhead{}
+    \renewcommand{\headrulewidth}{0pt}
+ }
+\setlength{\parskip}{8mm} %interlineado
+
+\usepackage{etoolbox}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{detailed}}{}{}
+
+%%%
+%%%
+%%% Característica y estilo de la nomenclatura
+
+\renewcommand{\nomgroup}[1]{%
+\item[]\hspace*{-\leftmargin}%
+\rule[2pt]{0cm}{1cm}
+\rule[2pt]{0.225\linewidth}{1pt}%
+\hfill %
+  {
+  \scshape
+  \bfseries
+  \ifstrequal{#1}{A}{Abreviaciones}{%
+  \ifstrequal{#1}{N}{Compuestos químicos}{%
+  \ifstrequal{#1}{O}{Otros símbolos}{}}}
+  }%
+\hfill %
+\rule[2pt]{0.25\linewidth}{1pt}%
+\vspace*{0.5cm}
+}
+\setlength{\nomitemsep}{-\parsep}
+\renewcommand{\nompreamble}{\begin{multicols}{2}}
+\renewcommand{\nompostamble}{\end{multicols}}
+
+\usepackage{appendix}
+
+
+\usepackage{times}
+%% TIPO DE LETRA Y PÁRRAFO SOBRE EL DOCUMENTO COMPLETO
+%%
+\renewcommand{\familydefault}{\rmdefault} %% Si se prefiere un tipo de
+                                          %% letra serif en todo el documento
+%\renewcommand{\familydefault}{\sfdefault} %% Si se prefiere un tipo de
+                                          %% letra  sans serif en todo
+                                          %% el documento
+
+\renewcommand{\baselinestretch}{1.6}
+\usepackage{titlesec}
+
+\renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}
+\renewcommand\thetable{\arabic{chapter}.\arabic{table}}
+\renewcommand\theequation{\arabic{chapter}.\arabic{equation}}
+
+% \textcolor[cmyk]{1,1,1,1}{figure}
+\usepackage{booktabs}
+
+\usepackage{tocloft}
+\addtolength{\cftfignumwidth}{3.0em}
+\renewcommand{\cftfigpresnum}{\figurename\ }
+\addtolength{\cfttabnumwidth}{3.0em}
+\renewcommand{\cfttabpresnum}{\tablename\ }
+%\renewcommand{\cftmarklot}{OLA}
+
+
+\usepackage[singlespacing]{setspace}
+\linespread{1.6}
+
+\usepackage{sectsty}% http://ctan.org/pkg/sectsty
+\usepackage{titlecaps}% http://ctan.org/pkg/titlecaps
+\sectionfont{\MakeUppercase}
+
+
+%% Formato para los Capítulos y secciones de la Tesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{myblack}{RGB}{0,0,0}
+
+\titleformat{\chapter}[display]
+{\normalfont\bfseries\color{myblack}}
+{\filleft\hspace*{-60pt}%
+	\rotatebox[origin=c]{90}{%
+		\normalfont\color{black}\Large%
+		\textls[90]{\textsc{\chaptertitlename}}%
+	}\hspace{10pt}%
+	{\setlength\fboxsep{0pt}%
+		\colorbox{myblack}{\parbox[c][3.6cm][c]{3cm}{%
+				\centering\color{white}\fontsize{80}{90}\selectfont\thechapter}%
+	}}%
+}
+{10pt}
+%{\flushright \titlerule[2.5pt]\vskip3pt\titlerule\vskip4pt\Huge\rmfamily}
+{\flushright \titlerule[2.5pt]\vskip3pt\titlerule\vskip4pt\Huge}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\titleformat{\section}[hang]
+{\normalfont\sffamily\bfseries\large\sc\color{myblack}}
+{\thesection}
+{10pt}
+{}
+[]
+
+\titleformat{\subsection}[hang]
+{\normalfont\sffamily\bfseries\color{myblack}}
+{\thesubsection}
+{10pt}
+{}
+[]
+
+\titleformat{\paragraph}[hang]
+{\normalfont\sffamily\bfseries\color{myblack}}
+{\theparagraph}
+{10pt}
+{}
+[]
